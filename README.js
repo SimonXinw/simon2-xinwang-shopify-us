@@ -2,7 +2,10 @@
 # 线上模板
 theme get --password=shptka_a8bc1f303349ec792567bf0fd9d8d69c --store="simon2-xinwang.myshopify.com" --themeid=152928092389
 
-# 监听保存
+# shopify 线上直接更改，自动同步
+theme watch --allow-live 
+
+# 监听保存，本地修改，自动同步
 theme watch
 
 # git 提交清除无需提交文件
