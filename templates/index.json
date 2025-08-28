@@ -12,7 +12,7 @@
     "image_banner": {
       "type": "image-banner-new",
       "settings": {
-        "image": "shopify://shop_images/banner_header.webp",
+        "image": "shopify://shop_images/homepage_banner_1.webp",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "image_behavior": "none",
@@ -27,6 +27,50 @@
         "mobile_content_alignment": "center",
         "show_text_below": false
       }
+    },
+    "product_services": {
+      "type": "product-services",
+      "blocks": {
+        "service_item_TiBAyB": {
+          "type": "service_item",
+          "settings": {
+            "image": "shopify://shop_images/homepage_service_icon_1.webp",
+            "title": "1-Year Warranty",
+            "desc": "Buy with confidence"
+          }
+        },
+        "service_item_KeNXGb": {
+          "type": "service_item",
+          "settings": {
+            "image": "shopify://shop_images/homepage_service_icon_2.webp",
+            "title": "Free shipping",
+            "desc": "Ship to the continental U.S."
+          }
+        },
+        "service_item_mYTHmG": {
+          "type": "service_item",
+          "settings": {
+            "image": "shopify://shop_images/homepage_service_icon_3.webp",
+            "title": "Secure Payment",
+            "desc": "Paypal & Credit Card Payment "
+          }
+        },
+        "service_item_gwXzLz": {
+          "type": "service_item",
+          "settings": {
+            "image": "shopify://shop_images/homepage_service_icon_4.webp",
+            "title": "Instant Support",
+            "desc": "Email & Phone Service"
+          }
+        }
+      },
+      "block_order": [
+        "service_item_TiBAyB",
+        "service_item_KeNXGb",
+        "service_item_mYTHmG",
+        "service_item_gwXzLz"
+      ],
+      "settings": {}
     },
     "featured_collection": {
       "type": "featured-collection",
@@ -59,6 +103,7 @@
   },
   "order": [
     "image_banner",
+    "product_services",
     "featured_collection"
   ]
 }
