@@ -36,29 +36,20 @@
   }
 
   #ImageCenterSlider-{{ section.id }} .swiper-slide {
-    width: 15%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0.7;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    flex-shrink: 0;
+    transition: opacity 0.3s ease;
   }
 
   #ImageCenterSlider-{{ section.id }} .swiper-slide-active {
-    width: 70%;
     opacity: 1;
-  }
-
-  #ImageCenterSlider-{{ section.id }} .swiper-slide-next,
-  #ImageCenterSlider-{{ section.id }} .swiper-slide-prev {
-    width: 15%;
   }
 
   #ImageCenterSlider-{{ section.id }} .slider-image {
     width: 100%;
-    height: 500px;
     object-fit: cover;
     border-radius: 20px;
     display: block;
@@ -148,16 +139,7 @@
     }
 
     #ImageCenterSlider-{{ section.id }} .swiper-slide {
-      width: 20%;
-    }
-
-    #ImageCenterSlider-{{ section.id }} .swiper-slide-active {
-      width: 60%;
-    }
-
-    #ImageCenterSlider-{{ section.id }} .swiper-slide-next,
-    #ImageCenterSlider-{{ section.id }} .swiper-slide-prev {
-      width: 20%;
+      width: 80%;
     }
 
     #ImageCenterSlider-{{ section.id }} .slider-nav-prev {
@@ -181,11 +163,7 @@
     }
 
     #ImageCenterSlider-{{ section.id }} .swiper-slide {
-      width: 100%;
-    }
-
-    #ImageCenterSlider-{{ section.id }} .swiper-slide-active {
-      width: 100%;
+      width: 90%;
     }
 
     #ImageCenterSlider-{{ section.id }} .slider-nav-button {
@@ -260,10 +238,8 @@
     if (typeof Swiper !== 'undefined') {
       const swiperInstance = new Swiper('.mySlider-{{ section.id }}', {
         slidesPerView: 3,
-        spaceBetween: 30,
+        spaceBetween: 60,
         centeredSlides: true,
-        loop: false,
-        autoHeight: false,
         navigation: {
           nextEl: '.swiper-button-next-{{ section.id }}',
           prevEl: '.swiper-button-prev-{{ section.id }}',
@@ -271,70 +247,37 @@
         breakpoints: {
           320: {
             slidesPerView: 1,
-            spaceBetween: 20,
-            centeredSlides: true,
+            spaceBetween: 0,
           },
           768: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-            centeredSlides: true,
+            slidesPerView: 1,
+            spaceBetween: 120,
           },
           1024: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            centeredSlides: true,
+            slidesPerView: 1,
+            spaceBetween: 60,
           },
         },
         on: {
           init: function () {
             console.log('Image Center Slider initialized for section {{ section.id }}');
-            // 初始化时设置宽度
-            this.updateSlidesWidth();
           },
           slideChange: function () {
-            // 更新slide透明度和宽度效果
-            this.updateSlidesWidth();
+            // 更新slide透明度效果
+            const slides = this.slides;
+            slides.forEach((slide, index) => {
+              if (index === this.activeIndex) {
+                slide.style.opacity = '1';
+              } else {
+                slide.style.opacity = '0.7';
+              }
+            });
           },
           error: function (error) {
             console.error('Swiper error:', error);
           },
         },
       });
-
-      // 添加更新slide宽度的方法
-      if (swiperInstance) {
-        swiperInstance.updateSlidesWidth = function() {
-          const slides = this.slides;
-          const isMobile = window.innerWidth <= 599;
-          const isTablet = window.innerWidth <= 899 && window.innerWidth > 599;
-          
-          slides.forEach((slide, index) => {
-            if (isMobile) {
-              // 移动端：只显示一个，100%宽度
-              slide.style.width = '100%';
-              slide.style.opacity = index === this.activeIndex ? '1' : '0.7';
-            } else if (isTablet) {
-              // 平板端：中间60%，左右各20%
-              if (index === this.activeIndex) {
-                slide.style.width = '60%';
-                slide.style.opacity = '1';
-              } else {
-                slide.style.width = '20%';
-                slide.style.opacity = '0.7';
-              }
-            } else {
-              // 桌面端：中间70%，左右各15%
-              if (index === this.activeIndex) {
-                slide.style.width = '70%';
-                slide.style.opacity = '1';
-              } else {
-                slide.style.width = '15%';
-                slide.style.opacity = '0.7';
-              }
-            }
-          });
-        };
-      }
     } else {
       console.error('Swiper is not loaded');
     }
