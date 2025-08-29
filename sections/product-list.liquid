@@ -422,7 +422,6 @@
 <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
     // 确保 Swiper 已加载
     if (typeof Swiper !== 'undefined') {
       const swiper{{ section.id }} = new Swiper('.mySwiper-{{ section.id }}', {
@@ -459,7 +458,6 @@
     } else {
       console.error('Swiper is not loaded');
     }
-  });
 </script>
 
 {% schema %}
