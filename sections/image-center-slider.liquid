@@ -239,29 +239,33 @@
     // 确保 Swiper 已加载
     if (typeof Swiper !== 'undefined') {
       const swiperInstance = new Swiper('.mySlider-{{ section.id }}', {
-        slidesPerView: 3,
-        spaceBetween: 60,
+        slidesPerView: 'auto',
+        spaceBetween: 0,
         centeredSlides: true,
         loop: false,
+        initialSlide: 1, // 从第二张图片开始
         navigation: {
           nextEl: '.swiper-button-next-{{ section.id }}',
           prevEl: '.swiper-button-prev-{{ section.id }}',
         },
         breakpoints: {
           320: {
-            slidesPerView: 1,
+            slidesPerView: 'auto',
             spaceBetween: 0,
             centeredSlides: true,
+            initialSlide: 0, // 手机端从第一张开始
           },
           768: {
-            slidesPerView: 2,
-            spaceBetween: 120,
+            slidesPerView: 'auto',
+            spaceBetween: 0,
             centeredSlides: true,
+            initialSlide: 1,
           },
           1024: {
-            slidesPerView: 3,
-            spaceBetween: 60,
+            slidesPerView: 'auto',
+            spaceBetween: 0,
             centeredSlides: true,
+            initialSlide: 1,
           },
         },
         on: {
