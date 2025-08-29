@@ -239,8 +239,8 @@
     // 确保 Swiper 已加载
     if (typeof Swiper !== 'undefined') {
       const swiperInstance = new Swiper('.mySlider-{{ section.id }}', {
-        slidesPerView: 1,
-        spaceBetween: 30,
+        slidesPerView: 3,
+        spaceBetween: 60,
         centeredSlides: true,
         loop: false,
         autoHeight: false,
@@ -251,15 +251,15 @@
         breakpoints: {
           320: {
             slidesPerView: 1,
-            spaceBetween: 20,
+            spaceBetween: 0,
           },
           768: {
             slidesPerView: 1,
-            spaceBetween: 30,
+            spaceBetween: 120,
           },
           1024: {
             slidesPerView: 1,
-            spaceBetween: 30,
+            spaceBetween: 60,
           },
         },
         on: {
