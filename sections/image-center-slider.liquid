@@ -41,11 +41,13 @@
     justify-content: center;
     align-items: center;
     opacity: 0.7;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
+    width: 15% !important; /* 左右两边的图片宽度 */
   }
 
   #ImageCenterSlider-{{ section.id }} .swiper-slide-active {
     opacity: 1;
+    width: 70% !important; /* 中间激活图片的宽度 */
   }
 
   #ImageCenterSlider-{{ section.id }} .slider-image {
@@ -238,8 +240,9 @@
     if (typeof Swiper !== 'undefined') {
       const swiperInstance = new Swiper('.mySlider-{{ section.id }}', {
         slidesPerView: 3,
-        spaceBetween: 60,
+        spaceBetween: 30,
         centeredSlides: true,
+        loop: false,
         navigation: {
           nextEl: '.swiper-button-next-{{ section.id }}',
           prevEl: '.swiper-button-prev-{{ section.id }}',
@@ -248,14 +251,17 @@
           320: {
             slidesPerView: 1,
             spaceBetween: 0,
+            centeredSlides: true,
           },
           768: {
-            slidesPerView: 1,
-            spaceBetween: 120,
+            slidesPerView: 2,
+            spaceBetween: 20,
+            centeredSlides: true,
           },
           1024: {
-            slidesPerView: 1,
-            spaceBetween: 60,
+            slidesPerView: 3,
+            spaceBetween: 30,
+            centeredSlides: true,
           },
         },
         on: {
