@@ -9,10 +9,37 @@
  */
 {
   "sections": {
+    "17564740902f1669a9": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_89899e9_hwi8Nw": {
+          "type": "ai_gen_block_89899e9",
+          "settings": {
+            "products": [
+              "电动骑行平衡车1"
+            ],
+            "button_text": "Shop Now",
+            "review_count": 400,
+            "feature_1_title": "",
+            "feature_1_desc": "",
+            "feature_2_title": "",
+            "feature_2_desc": "",
+            "feature_3_title": "",
+            "feature_3_desc": "",
+            "feature_4_title": "",
+            "feature_4_desc": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_89899e9_hwi8Nw"
+      ],
+      "settings": {}
+    },
     "image_banner": {
       "type": "image-banner-new",
       "settings": {
-        "image": "shopify://shop_images/homepage_banner_1.webp",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "image_behavior": "none",
@@ -34,7 +61,6 @@
         "service_item_TiBAyB": {
           "type": "service_item",
           "settings": {
-            "image": "shopify://shop_images/homepage_service_icon_1.webp",
             "title": "1-Year Warranty",
             "desc": "Buy with confidence"
           }
@@ -42,7 +68,6 @@
         "service_item_KeNXGb": {
           "type": "service_item",
           "settings": {
-            "image": "shopify://shop_images/homepage_service_icon_2.webp",
             "title": "Free shipping",
             "desc": "Ship to the continental U.S."
           }
@@ -50,15 +75,13 @@
         "service_item_mYTHmG": {
           "type": "service_item",
           "settings": {
-            "image": "shopify://shop_images/homepage_service_icon_3.webp",
             "title": "Secure Payment",
-            "desc": "Paypal & Credit Card Payment "
+            "desc": "Paypal & Credit Card Payment"
           }
         },
         "service_item_gwXzLz": {
           "type": "service_item",
           "settings": {
-            "image": "shopify://shop_images/homepage_service_icon_4.webp",
             "title": "Instant Support",
             "desc": "Email & Phone Service"
           }
@@ -102,6 +125,7 @@
     }
   },
   "order": [
+    "17564740902f1669a9",
     "image_banner",
     "product_services",
     "featured_collection"
