@@ -20,14 +20,15 @@
             ],
             "button_text": "Shop Now",
             "review_count": 400,
-            "feature_1_title": "",
-            "feature_1_desc": "",
-            "feature_2_title": "",
-            "feature_2_desc": "",
-            "feature_3_title": "",
-            "feature_3_desc": "",
-            "feature_4_title": "",
-            "feature_4_desc": ""
+            "feature_1_title": "2222",
+            "feature_1_desc": "1122",
+            "feature_2_icon": "shopify://shop_images/homepage_service_icon_1.webp",
+            "feature_2_title": "212",
+            "feature_2_desc": "1221",
+            "feature_3_title": "3232",
+            "feature_3_desc": "2323",
+            "feature_4_title": "2323",
+            "feature_4_desc": "2323"
           },
           "blocks": {}
         }
