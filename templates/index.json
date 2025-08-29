@@ -182,25 +182,25 @@
         "slide_item_1": {
           "type": "slide_item",
           "settings": {
-            "image": "shopify://shop_images/homepage_slider_1.webp",
+            "image": "shopify://shop_images/moments_banner_1.webp",
           }
         },
         "slide_item_2": {
           "type": "slide_item",
           "settings": {
-            "image": "shopify://shop_images/homepage_slider_1.webp",
+            "image": "shopify://shop_images/moments_banner_1.webp",
           }
         },
         "slide_item_3": {
           "type": "slide_item",
           "settings": {
-            "image": "shopify://shop_images/homepage_slider_1.webp",
+            "image": "shopify://shop_images/moments_banner_1.webp",
           }
         },
         "slide_item_4": {
           "type": "slide_item",
           "settings": {
-            "image": "shopify://shop_images/homepage_slider_1.webp",
+            "image": "shopify://shop_images/moments_banner_1.webp",
           }
         }
       },
