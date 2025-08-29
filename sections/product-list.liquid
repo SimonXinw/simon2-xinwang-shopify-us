@@ -422,42 +422,43 @@
 <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
 
 <script>
-    // 确保 Swiper 已加载
-    if (Swiper) {
-      const swiper{{ section.id }} = new Swiper('.mySwiper-{{ section.id }}', {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        navigation: {
-          nextEl: '.swiper-button-next-{{ section.id }}',
-          prevEl: '.swiper-button-prev-{{ section.id }}',
+  // 确保 Swiper 已加载
+  console.log('swiper >>>>>>>>>>>>', Swiper);
+  if (Swiper) {
+    const swiper{{ section.id }} = new Swiper('.mySwiper-{{ section.id }}', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: '.swiper-button-next-{{ section.id }}',
+        prevEl: '.swiper-button-prev-{{ section.id }}',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
         },
-        breakpoints: {
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          }
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
         },
-        // 确保循环和自动高度
-        loop: false,
-        autoHeight: false,
-        // 添加调试
-        on: {
-          init: function () {
-            console.log('Swiper initialized for section {{ section.id }}');
-          },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
         }
-      });
-    } else {
-      console.error('Swiper is not loaded');
-    }
+      },
+      // 确保循环和自动高度
+      loop: false,
+      autoHeight: false,
+      // 添加调试
+      on: {
+        init: function () {
+          console.log('Swiper initialized for section {{ section.id }}');
+        },
+      }
+    });
+  } else {
+    console.error('Swiper is not loaded');
+  }
 </script>
 
 {% schema %}
