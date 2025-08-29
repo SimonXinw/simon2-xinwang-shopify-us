@@ -194,6 +194,8 @@
       <h2 class="slider-title">{{ section.settings.title }}</h2>
     {%- endif -%}
 
+    <p class="slider-desc">{{ section.blocks | json }}222</p>
+
     {%- if section.blocks.size > 0 -%}
       <div class="slider-wrapper">
         <div class="swiper mySlider-{{ section.id }}">
