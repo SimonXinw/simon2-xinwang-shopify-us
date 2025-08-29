@@ -248,7 +248,7 @@
     if (typeof Swiper !== 'undefined') {
       const swiperInstance = new Swiper('.mySlider-{{ section.id }}', {
         slidesPerView: 3,
-        spaceBetween: 30,
+        spaceBetween: 60,
         centeredSlides: true,
         loop: false,
         navigation: {
@@ -263,31 +263,18 @@
           },
           768: {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 120,
             centeredSlides: true,
           },
           1024: {
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 60,
             centeredSlides: true,
           },
         },
         on: {
           init: function () {
             console.log('Image Center Slider initialized for section {{ section.id }}');
-          },
-          slideChange: function () {
-            // 更新slide透明度和宽度效果
-            const slides = this.slides;
-            slides.forEach((slide, index) => {
-              if (index === this.activeIndex) {
-                slide.style.opacity = '1';
-                slide.classList.add('swiper-slide-active');
-              } else {
-                slide.style.opacity = '0.7';
-                slide.classList.remove('swiper-slide-active');
-              }
-            });
           },
           error: function (error) {
             console.error('Swiper error:', error);
