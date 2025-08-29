@@ -41,8 +41,7 @@
     justify-content: center;
     align-items: center;
     opacity: 0.7;
-    transition: all 0.3s ease;
-    width: 15% !important; /* 左右两边的图片宽度 */
+    transition: opacity 0.3s ease;
   }
 
   #ImageCenterSlider-{{ section.id }} .swiper-slide-active {
@@ -141,11 +140,7 @@
     }
 
     #ImageCenterSlider-{{ section.id }} .swiper-slide {
-      width: 40% !important;
-    }
-
-    #ImageCenterSlider-{{ section.id }} .swiper-slide-active {
-      width: 60% !important;
+      width: 80%;
     }
 
     #ImageCenterSlider-{{ section.id }} .slider-nav-prev {
@@ -169,11 +164,7 @@
     }
 
     #ImageCenterSlider-{{ section.id }} .swiper-slide {
-      width: 90% !important;
-    }
-
-    #ImageCenterSlider-{{ section.id }} .swiper-slide-active {
-      width: 90% !important;
+      width: 90%;
     }
 
     #ImageCenterSlider-{{ section.id }} .slider-nav-button {
