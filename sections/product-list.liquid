@@ -424,7 +424,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     // 确保 Swiper 已加载
-    console.log('swiper >>>>>>>>>>>>', typeof Swiper !== 'undefined' ? Swiper : 'undefined');
+    console.log('swiper >>>>>>>>>>>>', {{ products_to_display }});
 
     if (typeof Swiper !== 'undefined') {
       // 使用安全的变量名
