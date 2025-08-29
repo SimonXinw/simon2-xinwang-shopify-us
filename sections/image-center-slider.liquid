@@ -288,23 +288,53 @@
         on: {
           init: function () {
             console.log('Image Center Slider initialized for section {{ section.id }}');
+            // 初始化时设置宽度
+            this.updateSlidesWidth();
           },
           slideChange: function () {
-            // 更新slide透明度效果
-            const slides = this.slides;
-            slides.forEach((slide, index) => {
-              if (index === this.activeIndex) {
-                slide.style.opacity = '1';
-              } else {
-                slide.style.opacity = '0.7';
-              }
-            });
+            // 更新slide透明度和宽度效果
+            this.updateSlidesWidth();
           },
           error: function (error) {
             console.error('Swiper error:', error);
           },
         },
       });
+
+      // 添加更新slide宽度的方法
+      if (swiperInstance) {
+        swiperInstance.updateSlidesWidth = function() {
+          const slides = this.slides;
+          const isMobile = window.innerWidth <= 599;
+          const isTablet = window.innerWidth <= 899 && window.innerWidth > 599;
+          
+          slides.forEach((slide, index) => {
+            if (isMobile) {
+              // 移动端：只显示一个，100%宽度
+              slide.style.width = '100%';
+              slide.style.opacity = index === this.activeIndex ? '1' : '0.7';
+            } else if (isTablet) {
+              // 平板端：中间60%，左右各20%
+              if (index === this.activeIndex) {
+                slide.style.width = '60%';
+                slide.style.opacity = '1';
+              } else {
+                slide.style.width = '20%';
+                slide.style.opacity = '0.7';
+              }
+            } else {
+              // 桌面端：中间70%，左右各15%
+              if (index === this.activeIndex) {
+                slide.style.width = '70%';
+                slide.style.opacity = '1';
+              } else {
+                slide.style.width = '15%';
+                slide.style.opacity = '0.7';
+              }
+            }
+          });
+        };
+      }
     } else {
       console.error('Swiper is not loaded');
     }
