@@ -266,6 +266,11 @@
 
 {%- liquid
   assign products_to_display = section.settings.products.size
+  
+  for product in section.settings.products
+    assign products_to_display = products_to_display | plus: 1 
+  endfor
+
   if products_to_display > section.settings.products_to_show
     assign products_to_display = section.settings.products_to_show
   endif
