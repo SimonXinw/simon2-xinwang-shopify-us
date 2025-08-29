@@ -36,17 +36,24 @@
   }
 
   #ImageCenterSlider-{{ section.id }} .swiper-slide {
-    width: 70%;
+    width: 15%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0.7;
     transition: opacity 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
   }
 
   #ImageCenterSlider-{{ section.id }} .swiper-slide-active {
+    width: 70%;
     opacity: 1;
+  }
+
+  #ImageCenterSlider-{{ section.id }} .swiper-slide-next,
+  #ImageCenterSlider-{{ section.id }} .swiper-slide-prev {
+    width: 15%;
   }
 
   #ImageCenterSlider-{{ section.id }} .slider-image {
