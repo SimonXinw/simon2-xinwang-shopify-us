@@ -135,6 +135,45 @@
         "padding_bottom": 36
       }
     },
+    "logos": {
+      "type": "logos",
+      "settings": {
+        "title": "Media Report"
+      },
+      "blocks": {
+        "logo_item_1": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify://shop_images/media_report_1.webp",
+          }
+        },
+        "logo_item_2": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify://shop_images/media_report_2.webp",
+          }
+        },
+        "logo_item_3": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify://shop_images/media_report_3.webp",
+          }
+        },
+        "logo_item_4": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify://shop_images/media_report_4.webp",
+          }
+        },
+      }
+      ,
+      "block_order": [
+        "logo_item_1",
+        "logo_item_2",
+        "logo_item_3",
+        "logo_item_4"
+      ],
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -168,6 +207,7 @@
     "image_banner",
     "product_services",
     "product-list",
+    "logos",
     "featured_collection"
   ]
 }
