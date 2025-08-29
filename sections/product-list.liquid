@@ -422,10 +422,13 @@
 <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
   // 确保 Swiper 已加载
-  console.log('swiper >>>>>>>>>>>>', Swiper);
-  if (Swiper) {
-    const swiper{{ section.id }} = new Swiper('.mySwiper-{{ section.id }}', {
+  console.log('swiper >>>>>>>>>>>>', typeof Swiper !== 'undefined' ? Swiper : 'undefined');
+  
+  if (typeof Swiper !== 'undefined') {
+    // 使用安全的变量名
+    const swiperInstance = new Swiper('.mySwiper-{{ section.id }}', {
       slidesPerView: 3,
       spaceBetween: 30,
       navigation: {
@@ -454,11 +457,19 @@
         init: function () {
           console.log('Swiper initialized for section {{ section.id }}');
         },
+        error: function(error) {
+          console.error('Swiper error:', error);
+        }
       }
     });
+    
+    // 将实例保存到全局对象以便调试
+    window['swiper_{{ section.id }}'] = swiperInstance;
+    
   } else {
     console.error('Swiper is not loaded');
   }
+});
 </script>
 
 {% schema %}
