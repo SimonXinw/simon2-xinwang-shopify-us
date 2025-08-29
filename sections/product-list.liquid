@@ -422,54 +422,50 @@
 <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // 确保 Swiper 已加载
-  console.log('swiper >>>>>>>>>>>>', typeof Swiper !== 'undefined' ? Swiper : 'undefined');
-  
-  if (typeof Swiper !== 'undefined') {
-    // 使用安全的变量名
-    const swiperInstance = new Swiper('.mySwiper-{{ section.id }}', {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      navigation: {
-        nextEl: '.swiper-button-next-{{ section.id }}',
-        prevEl: '.swiper-button-prev-{{ section.id }}',
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 10,
+  document.addEventListener('DOMContentLoaded', function () {
+    // 确保 Swiper 已加载
+    console.log('swiper >>>>>>>>>>>>', typeof Swiper !== 'undefined' ? Swiper : 'undefined');
+
+    if (typeof Swiper !== 'undefined') {
+      // 使用安全的变量名
+      const swiperInstance = new Swiper('.mySwiper-{{ section.id }}', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: '.swiper-button-next-{{ section.id }}',
+          prevEl: '.swiper-button-prev-{{ section.id }}',
         },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 20,
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
         },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        }
-      },
-      // 确保循环和自动高度
-      loop: false,
-      autoHeight: false,
-      // 添加调试
-      on: {
-        init: function () {
-          console.log('Swiper initialized for section {{ section.id }}');
+        // 确保循环和自动高度
+        loop: false,
+        autoHeight: false,
+        // 添加调试
+        on: {
+          init: function () {
+            console.log('Swiper initialized for section {{ section.id }}');
+          },
+          error: function (error) {
+            console.error('Swiper error:', error);
+          },
         },
-        error: function(error) {
-          console.error('Swiper error:', error);
-        }
-      }
-    });
-    
-    // 将实例保存到全局对象以便调试
-    window['swiper_{{ section.id }}'] = swiperInstance;
-    
-  } else {
-    console.error('Swiper is not loaded');
-  }
-});
+      });
+    } else {
+      console.error('Swiper is not loaded');
+    }
+  });
 </script>
 
 {% schema %}
