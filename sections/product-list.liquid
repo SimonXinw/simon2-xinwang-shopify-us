@@ -2,7 +2,6 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 
-<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
 {%- style -%}
@@ -226,11 +225,11 @@
   }
 
   .product-list__pagination {
-    position: absolute;
-    bottom: {{ 20 | times: 0.9 }}px;
-    right: {{ 20 | times: 0.9 }}px;
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
     gap: {{ 10 | times: 0.9 }}px;
+    margin-top: 40px;
   }
 
   .product-list__nav-button {
@@ -243,6 +242,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .product-list__nav-button:hover:not(.swiper-button-disabled) {
+    background: #ff7f3f; /* 鼠标悬停时的高亮色 */
+  }
+
+  .product-list__nav-button.swiper-button-disabled {
+    background: #F5BFA6; /* 禁用时的浅色背景 */
+    cursor: not-allowed;
   }
 
   .product-list__nav-icon {
@@ -251,13 +260,27 @@
     fill: #fff;
   }
 
+  .swiper {
+    width: 100%;
+    height: auto;
+  }
+
   .swiper-slide {
     width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
   }
 {%- endstyle -%}
 
 {%- liquid
-  assign products_to_display = section.settings.products.size
+  assign products_to_display = 0
+
+  for product in section.settings.products
+    assign products_to_display = products_to_display | plus: 1
+  endfor
+
   if products_to_display > section.settings.products_to_show
     assign products_to_display = section.settings.products_to_show
   endif
@@ -265,14 +288,17 @@
 
 <div class="color-{{ section.settings.color_scheme }} isolate gradient">
   <div class="product-list section-{{ section.id }}-padding">
-    {%- if section.settings.title != blank or section.settings.button_1_text != blank or section.settings.button_2_text != blank -%}
+    {%- if section.settings.title != blank
+      or section.settings.button_1_text != blank
+      or section.settings.button_2_text != blank
+    -%}
       <div class="product-list__header">
         {%- if section.settings.title != blank -%}
           <h2 class="product-list__title">
             {{ section.settings.title }}
           </h2>
         {%- endif -%}
-        
+
         {%- if section.settings.button_1_text != blank or section.settings.button_2_text != blank -%}
           <div class="product-list__buttons">
             {%- if section.settings.button_1_text != blank -%}
@@ -291,15 +317,17 @@
     {%- endif -%}
 
     <div class="product-list__slider">
-      <div class="swiper" id="swiper-{{ section.id }}">
+      <div class="swiper mySwiper-{{ section.id }}" id="swiper-{{ section.id }}">
         <div class="swiper-wrapper">
           {%- for product in section.settings.products limit: section.settings.products_to_show -%}
             <div class="swiper-slide">
               <div class="product-list__card">
                 {%- if product.featured_image -%}
-                  <img src="{{ product.featured_image | image_url: width: 585 }}" 
-                       alt="{{ product.featured_image.alt | default: product.title }}" 
-                       class="product-list__image">
+                  <img
+                    src="{{ product.featured_image | image_url: width: 585 }}"
+                    alt="{{ product.featured_image.alt | default: product.title }}"
+                    class="product-list__image"
+                  >
                 {%- endif -%}
 
                 <div class="product-list__details">
@@ -316,14 +344,22 @@
                           </svg>
                         {%- endfor -%}
                       </div>
-                      <span class="product-list__review-text">{{ section.settings.review_text | default: '400 reviews' }}</span>
+                      <span class="product-list__review-text">
+                        {{- section.settings.review_text | default: '400 reviews' -}}
+                      </span>
                     </div>
-                    
+
                     {%- if product.variants.size > 1 -%}
                       <div class="product-list__variants">
                         {%- for variant in product.variants limit: 5 -%}
-                          {%- if variant.option1 contains 'color' or variant.option2 contains 'color' or variant.option3 contains 'color' -%}
-                            <div class="product-list__variant" style="background-color: {{ variant.option1 | downcase }}"></div>
+                          {%- if variant.option1 contains 'color'
+                            or variant.option2 contains 'color'
+                            or variant.option3 contains 'color'
+                          -%}
+                            <div
+                              class="product-list__variant"
+                              style="background-color: {{ variant.option1 | downcase }}"
+                            ></div>
                           {%- endif -%}
                         {%- endfor -%}
                       </div>
@@ -337,9 +373,11 @@
                           {%- when 'feature' -%}
                             <div class="product-list__feature">
                               {%- if block.settings.icon -%}
-                                <img src="{{ block.settings.icon | image_url: width: 46 }}" 
-                                     alt="{{ block.settings.title }}" 
-                                     class="product-list__feature-icon">
+                                <img
+                                  src="{{ block.settings.icon | image_url: width: 46 }}"
+                                  alt="{{ block.settings.title }}"
+                                  class="product-list__feature-icon"
+                                >
                               {%- endif -%}
                               <div class="product-list__feature-text">
                                 {%- if block.settings.title -%}
@@ -361,7 +399,7 @@
                         {{ product.price | money }}
                       </span>
                     {%- endif -%}
-                    
+
                     {%- if product.compare_at_price and product.compare_at_price > product.price -%}
                       <span class="product-list__original-price">
                         {{ product.compare_at_price | money }}
@@ -377,47 +415,75 @@
             </div>
           {%- endfor -%}
         </div>
+        {%- if products_to_display > 3 -%}
+          <div class="product-list__pagination">
+            <button class="product-list__nav-button swiper-button-prev-{{ section.id }}">
+              <svg class="product-list__nav-icon" viewBox="0 0 24 24">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+              </svg>
+            </button>
+            <button class="product-list__nav-button swiper-button-next-{{ section.id }}">
+              <svg class="product-list__nav-icon" viewBox="0 0 24 24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+              </svg>
+            </button>
+          </div>
+        {%- endif -%}
       </div>
-
-      {%- if products_to_display > 3 -%}
-        <div class="product-list__pagination">
-          <button class="product-list__nav-button swiper-button-prev-{{ section.id }}">
-            <svg class="product-list__nav-icon" viewBox="0 0 24 24">
-              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-            </svg>
-          </button>
-          <button class="product-list__nav-button swiper-button-next-{{ section.id }}">
-            <svg class="product-list__nav-icon" viewBox="0 0 24 24">
-              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-            </svg>
-          </button>
-        </div>
-      {%- endif -%}
     </div>
   </div>
 </div>
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const swiper{{ section.id }} = new Swiper('#swiper-{{ section.id }}', {
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-    navigation: {
-      nextEl: '.swiper-button-next-{{ section.id }}',
-      prevEl: '.swiper-button-prev-{{ section.id }}',
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      1024: {
+  document.addEventListener('DOMContentLoaded', function () {
+    // 确保 Swiper 已加载
+    console.log('swiper >>>>>>>>>>>>', {{ products_to_display }});
+
+    if (typeof Swiper !== 'undefined') {
+      // 使用安全的变量名
+      const swiperInstance = new Swiper('.mySwiper-{{ section.id }}', {
         slidesPerView: 3,
         spaceBetween: 30,
-      }
+        pagination: {
+          el: '.swiper-pagination-{{ section.id }}',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next-{{ section.id }}',
+          prevEl: '.swiper-button-prev-{{ section.id }}',
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+        // 确保循环和自动高度
+        loop: false,
+        autoHeight: false,
+        // 添加调试
+        on: {
+          init: function () {
+            console.log('Swiper initialized for section {{ section.id }}');
+          },
+          error: function (error) {
+            console.error('Swiper error:', error);
+          },
+        },
+      });
+    } else {
+      console.error('Swiper is not loaded');
     }
   });
-});
 </script>
 
 {% schema %}
