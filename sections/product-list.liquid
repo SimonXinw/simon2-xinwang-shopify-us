@@ -251,8 +251,17 @@
     fill: #fff;
   }
 
+  .swiper {
+    width: 100%;
+    height: auto;
+  }
+
   .swiper-slide {
     width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
   }
 {%- endstyle -%}
 
@@ -294,7 +303,7 @@
     {%- endif -%}
 
     <div class="product-list__slider">
-      <div class="swiper" id="swiper-{{ section.id }}">
+      <div class="swiper mySwiper-{{ section.id }}" id="swiper-{{ section.id }}">
         <div class="swiper-wrapper">
           {%- for product in section.settings.products limit: section.settings.products_to_show -%}
             <div class="swiper-slide">
