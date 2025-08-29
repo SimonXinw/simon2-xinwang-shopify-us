@@ -202,11 +202,11 @@
               {%- if block.settings.image != blank -%}
                 <div class="swiper-slide" {{ block.shopify_attributes }}>
                   <img
-                    src="{{ block.settings.image | image_url: width: 800 }}"
+                    src="{{ block.settings.image | image_url: width: 1100 }}"
                     alt="{{ block.settings.image.alt | default: block.settings.title | default: 'Slider Image' }}"
                     class="slider-image"
                     width="800"
-                    height="500"
+                    height="600"
                     loading="lazy"
                   >
                 </div>
