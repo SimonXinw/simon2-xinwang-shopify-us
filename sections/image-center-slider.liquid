@@ -8,11 +8,12 @@
   }
 
   #ImageCenterSlider-{{ section.id }} .slider-container {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
   }
 
   #ImageCenterSlider-{{ section.id }} .slider-title {
+    width: 90%;
     font-family: Inter, sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -20,7 +21,7 @@
     line-height: 100%;
     letter-spacing: 0%;
     color: #000;
-    margin: 0 0 60px 0;
+    margin: 0 auto 60px auto;
     text-align: left;
   }
 
@@ -42,6 +43,8 @@
     align-items: center;
     opacity: 0.7;
     transition: opacity 0.3s ease;
+    width: 70% !important; /* 所有图片都是70%宽度 */
+    flex-shrink: 0;
   }
 
   #ImageCenterSlider-{{ section.id }} .swiper-slide-active {
@@ -139,7 +142,7 @@
     }
 
     #ImageCenterSlider-{{ section.id }} .swiper-slide {
-      width: 80%;
+      width: 80% !important;
     }
 
     #ImageCenterSlider-{{ section.id }} .slider-nav-prev {
@@ -163,7 +166,7 @@
     }
 
     #ImageCenterSlider-{{ section.id }} .swiper-slide {
-      width: 90%;
+      width: 90% !important;
     }
 
     #ImageCenterSlider-{{ section.id }} .slider-nav-button {
@@ -237,29 +240,33 @@
     // 确保 Swiper 已加载
     if (typeof Swiper !== 'undefined') {
       const swiperInstance = new Swiper('.mySlider-{{ section.id }}', {
-        slidesPerView: 3,
+        slidesPerView: 'auto',
         spaceBetween: 60,
         centeredSlides: true,
         loop: false,
+        initialSlide: 1, // 从第二张图片开始
         navigation: {
           nextEl: '.swiper-button-next-{{ section.id }}',
           prevEl: '.swiper-button-prev-{{ section.id }}',
         },
         breakpoints: {
           320: {
-            slidesPerView: 1,
+            slidesPerView: 'auto',
             spaceBetween: 0,
             centeredSlides: true,
+            initialSlide: 0, // 手机端从第一张开始
           },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 'auto',
             spaceBetween: 120,
             centeredSlides: true,
+            initialSlide: 1,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 'auto',
             spaceBetween: 60,
             centeredSlides: true,
+            initialSlide: 1,
           },
         },
         on: {
