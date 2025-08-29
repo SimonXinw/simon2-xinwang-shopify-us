@@ -52,7 +52,7 @@
           "settings": {
             "image": "shopify://shop_images/homepage_service_icon_3.webp",
             "title": "Secure Payment",
-            "desc": "Paypal & Credit Card Payment "
+            "desc": "Paypal & Credit Card Payment"
           }
         },
         "service_item_gwXzLz": {
@@ -74,7 +74,66 @@
     },
     "product-list": {
       "type": "product-list",
-      "settings": {}
+      "blocks": {
+        "feature_jGdPyM": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/product_card_icon_1.webp",
+            "title": "5000 Peak",
+            "description": "High-Power Motor"
+          }
+        },
+        "feature_CngYUB": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/product_card_icon_2.webp",
+            "title": "5000 Peak",
+            "description": "High-Power Motor"
+          }
+        },
+        "feature_AAyC6A": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/product_card_icon_3.webp",
+            "title": "5000 Peak",
+            "description": "High-Power Motor"
+          }
+        },
+        "feature_kXxYMe": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/product_card_icon_4.webp",
+            "title": "5000 Peak",
+            "description": "High-Power Motor"
+          }
+        }
+      },
+      "block_order": [
+        "feature_jGdPyM",
+        "feature_CngYUB",
+        "feature_AAyC6A",
+        "feature_kXxYMe"
+      ],
+      "settings": {
+        "title": "Bestsellers",
+        "button_1_text": "ELECTRIC UNICYCLE",
+        "button_1_url": "",
+        "button_2_text": "ELECTRIC SCOOTER",
+        "button_2_url": "",
+        "products": [
+          "电动骑行平衡车1",
+          "电动骑行平衡车2",
+          "电动骑行平衡车3",
+          "电动骑行平衡车4",
+          "电动骑行平衡车5"
+        ],
+        "products_to_show": 6,
+        "review_text": "400 reviews",
+        "shop_button_text": "Shop Now",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
     "featured_collection": {
       "type": "featured-collection",
