@@ -265,8 +265,8 @@
 {%- endstyle -%}
 
 {%- liquid
-  assign products_to_display = section.settings.products.size
-  
+  assign products_to_display = 0
+
   for product in section.settings.products
     assign products_to_display = products_to_display | plus: 1 
   endfor
@@ -276,7 +276,7 @@
   endif
 -%}
 
-<p>得瑟得瑟-{{ section.settings.products.size }}个产品</p>
+<p>得瑟得瑟-{{ products_to_display }}个产品</p>
 <p>得瑟得瑟{{ section.settings.products | size }}个产品</p>
 <p>得瑟得瑟{{ section.settings.products | json }}个产品</p>
 <div class="color-{{ section.settings.color_scheme }} isolate gradient">
