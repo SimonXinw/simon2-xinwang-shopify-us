@@ -165,8 +165,7 @@
             "image": "shopify://shop_images/media_report_4.webp",
           }
         },
-      }
-      ,
+      },
       "block_order": [
         "logo_item_1",
         "logo_item_2",
@@ -174,32 +173,19 @@
         "logo_item_4"
       ],
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "image-center-slider": {
+      "type": "image-center-slider",
       "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": true,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "title": "Inspiring Moments"
+      },
+      "blocks": {
+        "slide_item_1": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/homepage_slider_1.webp",
+            "title": "Inspiring Moments"
+          }
+        }
       }
     }
   },
@@ -208,6 +194,6 @@
     "product_services",
     "product-list",
     "logos",
-    "featured_collection"
+    "image-center-slider"
   ]
 }
