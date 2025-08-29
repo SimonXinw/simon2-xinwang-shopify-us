@@ -72,6 +72,10 @@
       ],
       "settings": {}
     },
+    "product-list": {
+      "type": "product-list",
+      "settings": {}
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -104,6 +108,7 @@
   "order": [
     "image_banner",
     "product_services",
+    "product-list",
     "featured_collection"
   ]
 }
