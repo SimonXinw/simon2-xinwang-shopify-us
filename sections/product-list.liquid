@@ -314,7 +314,7 @@
               <div class="product-list__card">
                 {%- if product.featured_image -%}
                   <img
-                    src="{{ product.featured_image | image_url: width: 585, height: 761 }}"
+                    src="{{ product.featured_image | image_url: width: 500 }}"
                     alt="{{ product.featured_image.alt | default: product.title }}"
                     class="product-list__image"
                   >
