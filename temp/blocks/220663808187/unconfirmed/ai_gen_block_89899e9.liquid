@@ -1,6 +1,751 @@
+{% doc %}
+  @prompt
+    帮我新增一个组件，我说的所有像素都要乘以 90% 去处理。
+    1.这个组件是横向左右排列的滑动区块，区块里面是最多三个产品卡片，可以左右滑动，也可以点击右下角的上下按钮切换。
+    2.每个产品卡片 item 内部有两个模块上下排列，上面是是动态配置的产品的主图 CSS width: 585;
+    height: 761;
+    border-radius: 20px;
+    ，下面是详情容器，详情容器是上下排列的行，
+    每一行里面是从左到右对齐，详情容器的
+    第一行是产品标题，title， css font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 36px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color：#000;
+    
+    第二行左边是评分插件，星星icon 和 text 400 review 这个文字，右边是配置的多个颜色选择的变体选项，
+    第三行是一个 icon text 容器，左边 icon 46*46 右边text容器，text-title cssfont-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color：#000;
+    ，text-desc css font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color：#000;
+    ,icon text 容器里面是一行两个最多配置 4个最多两行。
+    第四行是左边依次是final price  css font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 36px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    background: #FF0808;
+    
+    ，划线原价 背景 css font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-decoration: line-through;
+    , shopnow 按钮 功能是调到产品详情页 css width: 120;
+    height: 40;
+    border-radius: 10px;
+    background-color: orange;
+    按钮文本 css 
+    font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    
+    3.如果配置了多个产品，最多展示三个，区块宽度是 最大90% 宽度，区块右下角单独起一个div，有paginition 功能上一页和下一页， 样式是圆形区域 css width: 60;
+    height: 60;
+    background: #EC642C;
+    里面是白色的左箭头和右箭头 40*40px
+    。
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-product-slider-{{ ai_gen_id }} {
+    position: relative;
+    width: 90%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-product-slider__container-{{ ai_gen_id }} {
+    overflow: hidden;
+    border-radius: 18px;
+  }
+
+  .ai-product-slider__track-{{ ai_gen_id }} {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 18px;
+  }
+
+  .ai-product-card-{{ ai_gen_id }} {
+    flex: 0 0 calc(33.333% - 12px);
+    min-width: 0;
+  }
+
+  .ai-product-card__image-{{ ai_gen_id }} {
+    width: 526.5px;
+    height: 684.9px;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+
+  .ai-product-card__image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-product-card__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-product-card__image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .ai-product-card__details-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 14.4px;
+  }
+
+  .ai-product-card__title-{{ ai_gen_id }} {
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    font-size: 32.4px;
+    line-height: 100%;
+    color: #000;
+    margin: 0;
+  }
+
+  .ai-product-card__row-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14.4px;
+  }
+
+  .ai-product-card__rating-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 7.2px;
+  }
+
+  .ai-product-card__stars-{{ ai_gen_id }} {
+    display: flex;
+    gap: 3.6px;
+  }
+
+  .ai-product-card__star-{{ ai_gen_id }} {
+    width: 18px;
+    height: 18px;
+    fill: #FFD700;
+  }
+
+  .ai-product-card__review-text-{{ ai_gen_id }} {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 14.4px;
+    color: #666;
+  }
+
+  .ai-product-card__variants-{{ ai_gen_id }} {
+    display: flex;
+    gap: 7.2px;
+  }
+
+  .ai-product-card__variant-{{ ai_gen_id }} {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    cursor: pointer;
+  }
+
+  .ai-product-card__features-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .ai-product-card__feature-row-{{ ai_gen_id }} {
+    display: flex;
+    gap: 14.4px;
+  }
+
+  .ai-product-card__feature-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex: 1;
+  }
+
+  .ai-product-card__feature-icon-{{ ai_gen_id }} {
+    width: 41.4px;
+    height: 41.4px;
+    flex-shrink: 0;
+  }
+
+  .ai-product-card__feature-text-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-product-card__feature-title-{{ ai_gen_id }} {
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    color: #000;
+    margin: 0;
+  }
+
+  .ai-product-card__feature-desc-{{ ai_gen_id }} {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 14.4px;
+    line-height: 100%;
+    color: #000;
+    margin: 0;
+  }
+
+  .ai-product-card__price-row-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14.4px;
+  }
+
+  .ai-product-card__prices-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 14.4px;
+  }
+
+  .ai-product-card__final-price-{{ ai_gen_id }} {
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    font-size: 32.4px;
+    line-height: 100%;
+    color: #FF0808;
+    margin: 0;
+  }
+
+  .ai-product-card__original-price-{{ ai_gen_id }} {
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    text-decoration: line-through;
+    color: #666;
+    margin: 0;
+  }
+
+  .ai-product-card__shop-button-{{ ai_gen_id }} {
+    width: 108px;
+    height: 36px;
+    border-radius: 9px;
+    background-color: orange;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    color: white;
+  }
+
+  .ai-product-slider__pagination-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    display: flex;
+    gap: 9px;
+  }
+
+  .ai-product-slider__nav-button-{{ ai_gen_id }} {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #EC642C;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-product-slider__nav-button-{{ ai_gen_id }}:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .ai-product-slider__nav-icon-{{ ai_gen_id }} {
+    width: 36px;
+    height: 36px;
+    fill: white;
+  }
+
+  .ai-product-empty-state-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 36px;
+    color: #666;
+    font-family: Inter, sans-serif;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-product-card-{{ ai_gen_id }} {
+      flex: 0 0 calc(50% - 9px);
+    }
+
+    .ai-product-card__image-{{ ai_gen_id }} {
+      width: 100%;
+      height: 300px;
+    }
+
+    .ai-product-card__title-{{ ai_gen_id }} {
+      font-size: 24px;
+    }
+
+    .ai-product-card__final-price-{{ ai_gen_id }} {
+      font-size: 24px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .ai-product-card-{{ ai_gen_id }} {
+      flex: 0 0 calc(100% - 18px);
+    }
+  }
+{% endstyle %}
+
+<product-slider-{{ ai_gen_id }}
+  class="ai-product-slider-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-product-slider__container-{{ ai_gen_id }}">
+    {% assign products_to_show = block.settings.products | slice: 0, 3 %}
+    
+    {% if products_to_show.size > 0 %}
+      <div class="ai-product-slider__track-{{ ai_gen_id }}" data-track>
+        {% for product in products_to_show %}
+          <div class="ai-product-card-{{ ai_gen_id }}">
+            <div class="ai-product-card__image-{{ ai_gen_id }}">
+              {% if product.featured_image %}
+                <img
+                  src="{{ product.featured_image | image_url: width: 600 }}"
+                  alt="{{ product.featured_image.alt | escape }}"
+                  loading="lazy"
+                  width="600"
+                  height="600"
+                >
+              {% else %}
+                <div class="ai-product-card__image-placeholder-{{ ai_gen_id }}">
+                  {{ 'product-1' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="ai-product-card__details-{{ ai_gen_id }}">
+              <h3 class="ai-product-card__title-{{ ai_gen_id }}">{{ product.title }}</h3>
+
+              <div class="ai-product-card__row-{{ ai_gen_id }}">
+                <div class="ai-product-card__rating-{{ ai_gen_id }}">
+                  <div class="ai-product-card__stars-{{ ai_gen_id }}">
+                    {% for i in (1..5) %}
+                      <svg class="ai-product-card__star-{{ ai_gen_id }}" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      </svg>
+                    {% endfor %}
+                  </div>
+                  <span class="ai-product-card__review-text-{{ ai_gen_id }}">{{ block.settings.review_count }} reviews</span>
+                </div>
+
+                {% if product.variants.size > 1 %}
+                  <div class="ai-product-card__variants-{{ ai_gen_id }}">
+                    {% for variant in product.variants limit: 4 %}
+                      {% if variant.option1 contains 'Color' or variant.option2 contains 'Color' or variant.option3 contains 'Color' %}
+                        <div 
+                          class="ai-product-card__variant-{{ ai_gen_id }}"
+                          style="background-color: {{ variant.option1 | downcase }};"
+                        ></div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+
+              {% if block.settings.feature_1_title != blank or block.settings.feature_2_title != blank or block.settings.feature_3_title != blank or block.settings.feature_4_title != blank %}
+                <div class="ai-product-card__features-{{ ai_gen_id }}">
+                  <div class="ai-product-card__feature-row-{{ ai_gen_id }}">
+                    {% if block.settings.feature_1_title != blank %}
+                      <div class="ai-product-card__feature-{{ ai_gen_id }}">
+                        {% if block.settings.feature_1_icon %}
+                          <img 
+                            src="{{ block.settings.feature_1_icon | image_url: width: 50 }}" 
+                            alt="{{ block.settings.feature_1_title }}"
+                            class="ai-product-card__feature-icon-{{ ai_gen_id }}"
+                            width="50"
+                            height="50"
+                          >
+                        {% endif %}
+                        <div class="ai-product-card__feature-text-{{ ai_gen_id }}">
+                          <h4 class="ai-product-card__feature-title-{{ ai_gen_id }}">{{ block.settings.feature_1_title }}</h4>
+                          {% if block.settings.feature_1_desc != blank %}
+                            <p class="ai-product-card__feature-desc-{{ ai_gen_id }}">{{ block.settings.feature_1_desc }}</p>
+                          {% endif %}
+                        </div>
+                      </div>
+                    {% endif %}
+
+                    {% if block.settings.feature_2_title != blank %}
+                      <div class="ai-product-card__feature-{{ ai_gen_id }}">
+                        {% if block.settings.feature_2_icon %}
+                          <img 
+                            src="{{ block.settings.feature_2_icon | image_url: width: 50 }}" 
+                            alt="{{ block.settings.feature_2_title }}"
+                            class="ai-product-card__feature-icon-{{ ai_gen_id }}"
+                            width="50"
+                            height="50"
+                          >
+                        {% endif %}
+                        <div class="ai-product-card__feature-text-{{ ai_gen_id }}">
+                          <h4 class="ai-product-card__feature-title-{{ ai_gen_id }}">{{ block.settings.feature_2_title }}</h4>
+                          {% if block.settings.feature_2_desc != blank %}
+                            <p class="ai-product-card__feature-desc-{{ ai_gen_id }}">{{ block.settings.feature_2_desc }}</p>
+                          {% endif %}
+                        </div>
+                      </div>
+                    {% endif %}
+                  </div>
+
+                  {% if block.settings.feature_3_title != blank or block.settings.feature_4_title != blank %}
+                    <div class="ai-product-card__feature-row-{{ ai_gen_id }}">
+                      {% if block.settings.feature_3_title != blank %}
+                        <div class="ai-product-card__feature-{{ ai_gen_id }}">
+                          {% if block.settings.feature_3_icon %}
+                            <img 
+                              src="{{ block.settings.feature_3_icon | image_url: width: 50 }}" 
+                              alt="{{ block.settings.feature_3_title }}"
+                              class="ai-product-card__feature-icon-{{ ai_gen_id }}"
+                              width="50"
+                              height="50"
+                            >
+                          {% endif %}
+                          <div class="ai-product-card__feature-text-{{ ai_gen_id }}">
+                            <h4 class="ai-product-card__feature-title-{{ ai_gen_id }}">{{ block.settings.feature_3_title }}</h4>
+                            {% if block.settings.feature_3_desc != blank %}
+                              <p class="ai-product-card__feature-desc-{{ ai_gen_id }}">{{ block.settings.feature_3_desc }}</p>
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endif %}
+
+                      {% if block.settings.feature_4_title != blank %}
+                        <div class="ai-product-card__feature-{{ ai_gen_id }}">
+                          {% if block.settings.feature_4_icon %}
+                            <img 
+                              src="{{ block.settings.feature_4_icon | image_url: width: 50 }}" 
+                              alt="{{ block.settings.feature_4_title }}"
+                              class="ai-product-card__feature-icon-{{ ai_gen_id }}"
+                              width="50"
+                              height="50"
+                            >
+                          {% endif %}
+                          <div class="ai-product-card__feature-text-{{ ai_gen_id }}">
+                            <h4 class="ai-product-card__feature-title-{{ ai_gen_id }}">{{ block.settings.feature_4_title }}</h4>
+                            {% if block.settings.feature_4_desc != blank %}
+                              <p class="ai-product-card__feature-desc-{{ ai_gen_id }}">{{ block.settings.feature_4_desc }}</p>
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}<div class="ai-product-card__price-row-{{ ai_gen_id }}">
+                <div class="ai-product-card__prices-{{ ai_gen_id }}">
+                  <span class="ai-product-card__final-price-{{ ai_gen_id }}">{{ product.price | money }}</span>
+                  {% if product.compare_at_price > product.price %}
+                    <span class="ai-product-card__original-price-{{ ai_gen_id }}">{{ product.compare_at_price | money }}</span>
+                  {% endif %}
+                </div>
+                <a 
+                  href="{{ product.url }}" 
+                  class="ai-product-card__shop-button-{{ ai_gen_id }}"
+                >
+                  {{ block.settings.button_text }}
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if products_to_show.size > 1 %}
+        <div class="ai-product-slider__pagination-{{ ai_gen_id }}">
+          <button 
+            class="ai-product-slider__nav-button-{{ ai_gen_id }}" 
+            data-prev
+            aria-label="Previous product"
+          >
+            <svg class="ai-product-slider__nav-icon-{{ ai_gen_id }}" viewBox="0 0 24 24">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+          </button>
+          <button 
+            class="ai-product-slider__nav-button-{{ ai_gen_id }}" 
+            data-next
+            aria-label="Next product"
+          >
+            <svg class="ai-product-slider__nav-icon-{{ ai_gen_id }}" viewBox="0 0 24 24">
+              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+            </svg>
+          </button>
+        </div>
+      {% endif %}
+    {% else %}
+      <div class="ai-product-empty-state-{{ ai_gen_id }}">
+        <p>Please select products to display in this slider.</p>
+      </div>
+    {% endif %}
+  </div>
+</product-slider-{{ ai_gen_id }}>
+
+<script>
+(function() {
+  class ProductSlider{{ ai_gen_id }} extends HTMLElement {
+    constructor() {
+      super();
+      this.currentIndex = 0;
+      this.maxIndex = 0;
+    }
+
+    connectedCallback() {
+      this.track = this.querySelector('[data-track]');
+      this.prevButton = this.querySelector('[data-prev]');
+      this.nextButton = this.querySelector('[data-next]');
+      this.cards = this.querySelectorAll('.ai-product-card-{{ ai_gen_id }}');
+      
+      if (this.cards.length > 0) {
+        this.maxIndex = Math.max(0, this.cards.length - 1);
+        this.setupEventListeners();
+        this.updateButtons();
+      }
+    }
+
+    setupEventListeners() {
+      if (this.prevButton) {
+        this.prevButton.addEventListener('click', () => this.goToPrevious());
+      }
+      
+      if (this.nextButton) {
+        this.nextButton.addEventListener('click', () => this.goToNext());
+      }
+
+      let startX = 0;
+      let currentX = 0;
+      let isDragging = false;
+
+      this.track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      });
+
+      this.track.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+      });
+
+      this.track.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        const diff = startX - currentX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) {
+            this.goToNext();
+          } else {
+            this.goToPrevious();
+          }
+        }
+      });
+    }
+
+    goToPrevious() {
+      if (this.currentIndex > 0) {
+        this.currentIndex--;
+        this.updateSlider();
+      }
+    }
+
+    goToNext() {
+      if (this.currentIndex < this.maxIndex) {
+        this.currentIndex++;
+        this.updateSlider();
+      }
+    }
+
+    updateSlider() {
+      const translateX = -(this.currentIndex * (100 / 3));
+      this.track.style.transform = `translateX(${translateX}%)`;
+      this.updateButtons();
+    }
+
+    updateButtons() {
+      if (this.prevButton) {
+        this.prevButton.disabled = this.currentIndex === 0;
+      }
+      
+      if (this.nextButton) {
+        this.nextButton.disabled = this.currentIndex >= this.maxIndex;
+      }
+    }
+  }
+
+  customElements.define('product-slider-{{ ai_gen_id }}', ProductSlider{{ ai_gen_id }});
+})();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Product slider",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Products"
+    },
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "Products",
+      "limit": 3
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Shop button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "range",
+      "id": "review_count",
+      "min": 0,
+      "max": 1000,
+      "step": 10,
+      "label": "Review count",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "Feature 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_1_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_desc",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Feature 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_2_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_desc",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Feature 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_3_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_desc",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Feature 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_4_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "feature_4_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "feature_4_desc",
+      "label": "Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product slider"
+    }
+  ],
+  "tag": null
+}
 {% endschema %}
