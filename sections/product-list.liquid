@@ -242,10 +242,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .product-list__nav-button:hover:not(.swiper-button-disabled) {
+    background: #ff7f3f; /* 鼠标悬停时的高亮色 */
   }
 
   .product-list__nav-button.swiper-button-disabled {
     background: #F5BFA6; /* 禁用时的浅色背景 */
+    cursor: not-allowed;
   }
 
   .product-list__nav-icon {
