@@ -423,7 +423,7 @@
 
 <script>
     // 确保 Swiper 已加载
-    if (typeof Swiper !== 'undefined') {
+    if (Swiper) {
       const swiper{{ section.id }} = new Swiper('.mySwiper-{{ section.id }}', {
         slidesPerView: 3,
         spaceBetween: 30,
