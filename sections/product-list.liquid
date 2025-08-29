@@ -446,9 +446,6 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // 确保 Swiper 已加载
-    console.log('swiper >>>>>>>>>>>>', {{ products_to_display }});
-
     if (typeof Swiper !== 'undefined') {
       // 使用安全的变量名
       const swiperInstance = new Swiper('.mySwiper-{{ section.id }}', {
@@ -500,7 +497,6 @@
 
     const cardEles = document.querySelectorAll(`#swiper-{{ section.id }} .product-list__card`);
 
-    console.log('cardEles >>>>>>>>>>>>', cardEles);
     cardEles?.forEach((cardEle, idx) => {
       const product = productsData[idx];
       cardEle.product = product

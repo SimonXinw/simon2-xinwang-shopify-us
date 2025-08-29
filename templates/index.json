@@ -135,39 +135,88 @@
         "padding_bottom": 36
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "logos": {
+      "type": "logos",
       "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": true,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
-      }
+        "title": "Media Report"
+      },
+      "blocks": {
+        "logo_item_1": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify://shop_images/media_report_1.webp",
+          }
+        },
+        "logo_item_2": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify://shop_images/media_report_2.webp",
+          }
+        },
+        "logo_item_3": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify://shop_images/media_report_3.webp",
+          }
+        },
+        "logo_item_4": {
+          "type": "logo_item",
+          "settings": {
+            "image": "shopify://shop_images/media_report_4.webp",
+          }
+        },
+      },
+      "block_order": [
+        "logo_item_1",
+        "logo_item_2",
+        "logo_item_3",
+        "logo_item_4"
+      ],
+    },
+    "image-center-slider": {
+      "type": "image-center-slider",
+      "settings": {
+        "title": "Inspiring Moments"
+      },
+      "blocks": {
+        "slide_item_1": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/moments_banner_1.webp",
+          }
+        },
+        "slide_item_2": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/moments_banner_1.webp",
+          }
+        },
+        "slide_item_3": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/moments_banner_1.webp",
+          }
+        },
+        "slide_item_4": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/moments_banner_1.webp",
+          }
+        }
+      },
+      "block_order": [
+        "slide_item_1",
+        "slide_item_2",
+        "slide_item_3",
+        "slide_item_4"
+      ]
     }
   },
   "order": [
     "image_banner",
     "product_services",
     "product-list",
-    "featured_collection"
+    "logos",
+    "image-center-slider"
   ]
 }
