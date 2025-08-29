@@ -405,6 +405,7 @@
             </div>
           {%- endfor -%}
         </div>
+        <div class="swiper-pagination-{{ section.id }}"></div>
         {%- if products_to_display > 3 -%}
           <div class="product-list__pagination">
             <button class="product-list__nav-button swiper-button-prev-{{ section.id }}">
@@ -435,6 +436,11 @@
       const swiperInstance = new Swiper('.mySwiper-{{ section.id }}', {
         slidesPerView: 3,
         spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination-{{ section.id }}',
+          clickable: true,
+        },
+        
         navigation: {
           nextEl: '.swiper-button-next-{{ section.id }}',
           prevEl: '.swiper-button-prev-{{ section.id }}',
