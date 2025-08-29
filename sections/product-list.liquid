@@ -403,7 +403,7 @@
         </div>
       </div>
 
-      {%- if products_to_display > 3 -%}
+      {%- if products_to_display > 1 -%}
         <div class="product-list__pagination">
           <button class="product-list__nav-button swiper-button-prev-{{ section.id }}">
             <svg class="product-list__nav-icon" viewBox="0 0 24 24">
@@ -423,24 +423,42 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const swiper{{ section.id }} = new Swiper('#swiper-{{ section.id }}', {
-      slidesPerView: 'auto',
-      spaceBetween: 30,
-      navigation: {
-        nextEl: '.swiper-button-next-{{ section.id }}',
-        prevEl: '.swiper-button-prev-{{ section.id }}',
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 20,
+    // 确保 Swiper 已加载
+    if (typeof Swiper !== 'undefined') {
+      const swiper{{ section.id }} = new Swiper('.mySwiper-{{ section.id }}', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: '.swiper-button-next-{{ section.id }}',
+          prevEl: '.swiper-button-prev-{{ section.id }}',
         },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 30,
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          }
+        },
+        // 确保循环和自动高度
+        loop: false,
+        autoHeight: false,
+        // 添加调试
+        on: {
+          init: function () {
+            console.log('Swiper initialized for section {{ section.id }}');
+          },
         }
-      }
-    });
+      });
+    } else {
+      console.error('Swiper is not loaded');
+    }
   });
 </script>
 
