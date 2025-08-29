@@ -183,10 +183,33 @@
           "type": "slide_item",
           "settings": {
             "image": "shopify://shop_images/homepage_slider_1.webp",
-            "title": "Inspiring Moments"
+          }
+        },
+        "slide_item_2": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/homepage_slider_1.webp",
+          }
+        },
+        "slide_item_3": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/homepage_slider_1.webp",
+          }
+        },
+        "slide_item_4": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/homepage_slider_1.webp",
           }
         }
-      }
+      },
+      "block_order": [
+        "slide_item_1",
+        "slide_item_2",
+        "slide_item_3",
+        "slide_item_4"
+      ]
     }
   },
   "order": [
