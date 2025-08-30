@@ -368,8 +368,7 @@
         "gallery_item_3": {
           "type": "gallery_item",
           "settings": {
-            "image": "shopify://shop_images/image_gallery_overlay_3.webp",
-            "logo": "shopify://shop_images/image_gallery_overlay_3.webp",
+            "logo": "shopify://shop_images/homepage_gallary_logo_1.webp",
             "title": "Buy Now, Pay Later",
             "subtitle": "Buy now, pay later with Affirm"
           }
@@ -377,8 +376,7 @@
         "gallery_item_4": {
           "type": "gallery_item",
           "settings": {
-            "image": "shopify://shop_images/image_gallery_overlay_4.webp",
-            "logo": "shopify://shop_images/image_gallery_overlay_4.webp",
+            "logo": "shopify://shop_images/homepage_gallary_logo_2.webp",
             "title": "Free Shipping",
             "subtitle": "Segway pays your shipping fee with orders over $99"
           }
