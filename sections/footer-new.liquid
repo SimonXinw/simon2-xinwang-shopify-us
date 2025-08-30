@@ -360,6 +360,7 @@
           <div class="footer-column-links">
             {%- for block in section.blocks -%}
               <p style="color: #fff;">{{ block.type }}</p>
+              
               {%- if block.type == 'company_link' -%}
                 <a href="{{ block.settings.link }}" class="footer-link">{{ block.settings.text }}</a>
               {%- endif -%}
