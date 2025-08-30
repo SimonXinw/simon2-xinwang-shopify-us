@@ -272,7 +272,7 @@
         "review_item_2": {
           "type": "review_item",
           "settings": {
-            "user_avatar": "shopify://shop_images/user_review_2.webp",
+            "user_avatar": "shopify://shop_images/user_avatar_2.webp",
             "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.",
             "user_name": "Pat Outdoors",
             "rating": 5
