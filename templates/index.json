@@ -213,7 +213,9 @@
     },
     "image-with-features": {
       "type": "image-with-features",
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/image_with_text_1.webp",
+      }
     }
   },
   "order": [
