@@ -11,10 +11,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "footer": {
-      "type": "footer",
-      "settings": {}
-    },
     "footer-new": {
       "type": "footer-new",
       "settings": {
@@ -135,6 +131,5 @@
   },
   "order": [
     "footer-new",
-    "footer"
   ]
 }
