@@ -210,6 +210,49 @@
         "slide_item_3",
         "slide_item_4"
       ]
+    },
+    "image-with-features": {
+      "type": "image-with-features",
+      "settings": {
+        "main_title": "Ride Further Together",
+        "image": "shopify://shop_images/image_with_text_1.webp",
+      },
+      "blocks": {
+        "feature_item_1": {
+          "type": "feature",
+          "settings": {
+            "number": "100+",
+            "description": "Selling to Countriesand Regions"
+          }
+        },
+        "feature_item_2": {
+          "type": "feature",
+          "settings": {
+            "number": "200+",
+            "description": "Global Electric Scooter Sales"
+          }
+        },
+        "feature_item_3": {
+          "type": "feature",
+          "settings": {
+            "number": "33,322,33+",
+            "description": "Electric Scooter Patent"
+          }
+        },
+        "feature_item_4": {
+          "type": "feature",
+          "settings": {
+            "number": "400+",
+            "description": "Global Electric Scooter Sales"
+          }
+        }
+      },
+      "block_order": [
+        "feature_item_1",
+        "feature_item_2",
+        "feature_item_3",
+        "feature_item_4"
+      ]
     }
   },
   "order": [
@@ -217,6 +260,7 @@
     "product_services",
     "product-list",
     "logos",
-    "image-center-slider"
+    "image-center-slider",
+    "image-with-features"
   ]
 }
