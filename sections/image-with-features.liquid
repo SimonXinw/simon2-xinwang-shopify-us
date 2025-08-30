@@ -45,7 +45,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    padding: 0 15px;
+    padding: 15px 0;
   }
 
   #ImageWithFeatures-{{ section.id }} .image-with-features-main-title {
@@ -63,7 +63,7 @@
   #ImageWithFeatures-{{ section.id }} .image-with-features-features {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    row-gap: 90px;
   }
 
   #ImageWithFeatures-{{ section.id }} .image-with-features-feature {
@@ -229,7 +229,7 @@
     {
       "type": "text",
       "id": "title",
-      "label": "主标题",
+      "label": "主标题"
     },
     {
       "type": "image_picker",
