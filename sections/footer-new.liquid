@@ -358,10 +358,9 @@
         <div class="footer-column">
           <h3 class="footer-column-title">{{ section.settings.company_title | default: 'Company' }}</h3>
           <div class="footer-column-links">
-            <p style="color: #fff;">2222{{ section.blocks | json }}</p>
+            <p style="color: #fff;">2222{{ section.blocks.size }}</p>
 
             {%- for block in section.blocks -%}
-
               {%- if block.type == 'company_link' -%}
                 <a href="{{ block.settings.link }}" class="footer-link">{{ block.settings.text }}</a>
               {%- endif -%}
