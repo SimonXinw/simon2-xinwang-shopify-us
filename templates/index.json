@@ -253,47 +253,146 @@
         "feature_item_3",
         "feature_item_4"
       ]
-    }
-  },
-  "user-reviews-slider": {
-    "type": "user-reviews-slider",
-    "settings": {
-      "title": "What Our Customers Are Saying?"
     },
-    "blocks": {
-      "review_item_1": {
-        "type": "review_item",
-        "settings": {
-          "image": "shopify://shop_images/user_avatar_1.webp",
-          "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.！",
-          "user_name": "Pat Outdoors",
-          "rating": 5
+    "user-reviews-slider": {
+      "type": "user-reviews-slider",
+      "settings": {
+        "title": "What Our Customers Are Saying?"
+      },
+      "blocks": {
+        "review_item_1": {
+          "type": "review_item",
+          "settings": {
+            "user_avatar": "shopify://shop_images/user_avatar_1.webp",
+            "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.！",
+            "user_name": "Pat Outdoors",
+            "rating": 5
+          }
+        },
+        "review_item_2": {
+          "type": "review_item",
+          "settings": {
+            "user_avatar": "shopify://shop_images/user_avatar_2.webp",
+            "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.",
+            "user_name": "Pat Outdoors",
+            "rating": 5
+          }
+        },
+        "review_item_3": {
+          "type": "review_item",
+          "settings": {
+            "user_avatar": "shopify://shop_images/user_avatar_3.webp",
+            "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.",
+            "user_name": "Pawel Urbanik",
+            "rating": 4
+          }
         }
       },
-      "review_item_2": {
-        "type": "review_item",
-        "settings": {
-          "image": "shopify://shop_images/user_review_2.webp",
-          "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.",
-          "user_name": "Pat Outdoors",
-          "rating": 5
+      "block_order": [
+        "review_item_1",
+        "review_item_2",
+        "review_item_3"
+      ]
+    },
+    "image-gallery-overla": {
+      "type": "image-gallery-overla",
+      "settings": {
+        "title": "Image Gallery Overlay"
+      },
+      "blocks": {
+        "gallery_item_1": {
+          "type": "gallery_item",
+          "settings": {
+            "image": "shopify://shop_images/homepage_gallary_1.webp",
+            "title": "Rewards Program",
+            "subtitle": "Segway Mileage Club",
+            "description": "Earn miles while interacting or shopping with us"
+          }
+        },
+        "gallery_item_2": {
+          "type": "gallery_item",
+          "settings": {
+            "image": "shopify://shop_images/homepage_gallary_2.webp",
+            "title": "Welcome Gift",
+            "subtitle": "Welcome gift for new Subscribers",
+            "description": "New to Segway? Receive a special gift designed to power up your first ride."
+          }
+        },
+        "gallery_item_3": {
+          "type": "gallery_item",
+          "settings": {
+            "logo": "shopify://shop_images/homepage_gallary_logo_1.webp",
+            "title": "Buy Now, Pay Later",
+            "subtitle": "Buy now, pay later with Affirm",
+          }
+        },
+        "gallery_item_4": {
+          "type": "gallery_item",
+          "settings": {
+            "logo": "shopify://shop_images/homepage_gallary_logo_2.webp",
+            "title": "Free Shipping",
+            "subtitle": "Segway pays your shipping fee with orders over $99",
+          }
         }
       },
-      "review_item_3": {
-        "type": "review_item",
-        "settings": {
-          "image": "shopify://shop_images/user_avatar_3.webp",
-          "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.",
-          "user_name": "Pawel Urbanik",
-          "rating": 4
-        }
-      }
+      "block_order": [
+        "gallery_item_1",
+        "gallery_item_2",
+        "gallery_item_3",
+        "gallery_item_4"
+      ]
     },
-    "block_order": [
-      "review_item_1",
-      "review_item_2",
-      "review_item_3"
-    ]
+    "image-with-info": {
+      "type": "image-with-info",
+      "settings": {
+        "title": "News",
+        "image": "shopify://shop_images/image_with_info_1.webp",
+      },
+      "blocks": {
+        "news_item_1": {
+          "type": "news_item",
+          "settings": {
+            "title": "What Is a Suspension Electric Unicycle?",
+            "description": "It's cool. All EUCs are sensor-responsive. Imagine the feeling of someone silently gliding past you at speed.",
+            "date": "April 10 2025",
+            "image": "shopify://shop_images/homepage_news_1.webp",
+          }
+        },
+        "news_item_2": {
+          "type": "news_item",
+          "settings": {
+            "title": "What Is a Suspension Electric Unicycle?",
+            "description": "It's cool. All EUCs are sensor-responsive. Imagine the feeling of someone silently gliding past you at speed.",
+            "date": "April 10 2025",
+            "image": "shopify://shop_images/homepage_news_2.webp",
+          }
+        },
+        "news_item_3": {
+          "type": "news_item",
+          "settings": {
+            "title": "What Is a Suspension Electric Unicycle?",
+            "description": "It's cool. All EUCs are sensor-responsive. Imagine the feeling of someone silently gliding past you at speed.",
+            "date": "April 10 2025",
+            "image": "shopify://shop_images/homepage_news_3.webp",
+          }
+        },
+        "news_item_4": {
+          "type": "news_item",
+          "settings": {
+            "title": "What Is a Suspension Electric Unicycle?",
+            "description": "It's cool. All EUCs are sensor-responsive. Imagine the feeling of someone silently gliding past you at speed.",
+            "date": "April 10 2025",
+            "image": "shopify://shop_images/homepage_news_4.webp",
+          }
+        }
+      },
+      "block_order": [
+        "news_item_1",
+        "news_item_2",
+        "news_item_3",
+        "news_item_4"
+      ]
+    },
   },
   "order": [
     "image_banner",
@@ -302,6 +401,8 @@
     "logos",
     "image-center-slider",
     "image-with-features",
-    "user-reviews-slider"
+    "user-reviews-slider",
+    "image-gallery-overla",
+    "image-with-info",
   ]
 }

@@ -47,7 +47,6 @@
     min-width: 300px;
     height: auto;
     transform: rotate(0deg);
-    opacity: 0.5;
     border-radius: 20px;
     background: #D9D9D9;
     padding: 30px 40px;
@@ -84,8 +83,7 @@
 
   #UserReviewsSlider-{{ section.id }} .user-details {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    gap: 20px;
   }
 
   #UserReviewsSlider-{{ section.id }} .user-name {
@@ -183,7 +181,7 @@
             {%- if block.settings.review_text != blank -%}
               <div class="review-text">{{ block.settings.review_text }}</div>
             {%- endif -%}
-            
+
             <div class="user-info">
               {%- if block.settings.user_avatar != blank -%}
                 <img
@@ -195,12 +193,12 @@
                   loading="lazy"
                 >
               {%- endif -%}
-              
+
               <div class="user-details">
                 {%- if block.settings.user_name != blank -%}
                   <div class="user-name">{{ block.settings.user_name }}</div>
                 {%- endif -%}
-                
+
                 {%- if block.settings.rating > 0 -%}
                   <div class="stars-container">
                     {%- for i in (1..5) -%}
