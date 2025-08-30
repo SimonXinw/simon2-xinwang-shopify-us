@@ -305,8 +305,41 @@
             "description": "It's cool. All EUCs are sensor-responsive. Imagine the feeling of someone silently gliding past you at speed.",
             "date": "April 10 2025"
           }
+        },
+        "news_item_2": {
+          "type": "news_item",
+          "settings": {
+            "image": "shopify://shop_images/homepage_news_2.webp",
+            "title": "What Is a Suspension Electric Unicycle?",
+            "description": "It's cool. All EUCs are sensor-responsive. Imagine the feeling of someone silently gliding past you at speed.",
+            "date": "April 10 2025"
+          }
+        },
+        "news_item_3": {
+          "type": "news_item",
+          "settings": {
+            "image": "shopify://shop_images/homepage_news_3.webp",
+            "title": "What Is a Suspension Electric Unicycle?",
+            "description": "It's cool. All EUCs are sensor-responsive. Imagine the feeling of someone silently gliding past you at speed.",
+            "date": "April 10 2025"
+          }
+        },
+        "news_item_4": {
+          "type": "news_item",
+          "settings": {
+            "image": "shopify://shop_images/homepage_news_4.webp",
+            "title": "What Is a Suspension Electric Unicycle?",
+            "description": "It's cool. All EUCs are sensor-responsive. Imagine the feeling of someone silently gliding past you at speed.",
+            "date": "April 10 2025"
+          }
         }
       },
+      "block_order": [
+        "news_item_1",
+        "news_item_2",
+        "news_item_3",
+        "news_item_4"
+      ],
       "settings": {
         "title": "News"
       }
