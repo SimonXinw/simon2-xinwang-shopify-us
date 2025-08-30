@@ -343,6 +343,60 @@
       "settings": {
         "title": "News"
       }
+    },
+    "image-gallery-overla": {
+      "type": "image-gallery-overla",
+      "blocks": {
+        "gallery_item_1": {
+          "type": "gallery_item",
+          "settings": {
+            "image": "shopify://shop_images/image_gallery_overlay_1.webp",
+            "logo": "shopify://shop_images/image_gallery_overlay_1.webp",
+            "title": "Rewards Program",
+            "subtitle": "Segway Mileage Club",
+            "description": "Earn miles while interacting or shopping with us"
+          }
+        },
+        "gallery_item_2": {
+          "type": "gallery_item",
+          "settings": {
+            "image": "shopify://shop_images/image_gallery_overlay_2.webp",
+            "logo": "shopify://shop_images/image_gallery_overlay_2.webp",
+            "title": "Rewards Program",
+            "subtitle": "Segway Mileage Club",
+            "description": "Earn miles while interacting or shopping with us"
+          }
+        },
+        "gallery_item_3": {
+          "type": "gallery_item",
+          "settings": {
+            "image": "shopify://shop_images/image_gallery_overlay_3.webp",
+            "logo": "shopify://shop_images/image_gallery_overlay_3.webp",
+            "title": "Rewards Program",
+            "subtitle": "Segway Mileage Club",
+            "description": "Earn miles while interacting or shopping with us"
+          }
+        },
+        "gallery_item_4": {
+          "type": "gallery_item",
+          "settings": {
+            "image": "shopify://shop_images/image_gallery_overlay_4.webp",
+            "logo": "shopify://shop_images/image_gallery_overlay_4.webp",
+            "title": "Rewards Program",
+            "subtitle": "Segway Mileage Club",
+            "description": "Earn miles while interacting or shopping with us"
+          }
+        }
+      },
+      "block_order": [
+        "gallery_item_1",
+        "gallery_item_2",
+        "gallery_item_3",
+        "gallery_item_4"
+      ],
+      "settings": {
+        "title": "Image Gallery Overlay"
+      }
     }
   },
   "order": [
@@ -353,6 +407,7 @@
     "image-center-slider",
     "image-with-features",
     "user-reviews-slider",
-    "image-with-info"
+    "image-with-info",
+    "image-gallery-overla"
   ]
 }
