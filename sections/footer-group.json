@@ -28,7 +28,8 @@
         "contact_title": "Pre-sales Support :",
         "contact_email": "info@top-feel.com",
         "vision_title": "Vision",
-        "vision_text": "Imagine: an early morning adventure through the bustling streets, effortlessly moving between the rhythms of the city. Say goodbye to the banal routine and embrace the excitement of the unknown. Join us on a journey that makes every commute an adventure!"
+        "vision_text": "Imagine: an early morning adventure through the bustling streets, effortlessly moving between the rhythms of the city. Say goodbye to the banal routine and embrace the excitement of the unknown. Join us on a journey that makes every commute an adventure!",
+        "payment_icon": "shopify://shop_images/footer_icons.png"
       },
       "blocks": {
         "company_link_1": {
