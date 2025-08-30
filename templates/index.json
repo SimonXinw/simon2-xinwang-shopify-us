@@ -214,6 +214,7 @@
     "image-with-features": {
       "type": "image-with-features",
       "settings": {
+        "main_title": "Ride Further Together",
         "image": "shopify://shop_images/image_with_text_1.webp",
       },
       "blocks": {
