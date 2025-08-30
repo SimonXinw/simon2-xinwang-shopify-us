@@ -350,8 +350,7 @@
         "gallery_item_1": {
           "type": "gallery_item",
           "settings": {
-            "image": "shopify://shop_images/image_gallery_overlay_1.webp",
-            "logo": "shopify://shop_images/image_gallery_overlay_1.webp",
+            "image": "shopify://shop_images/homepage_gallary_1.webp",
             "title": "Rewards Program",
             "subtitle": "Segway Mileage Club",
             "description": "Earn miles while interacting or shopping with us"
@@ -360,8 +359,7 @@
         "gallery_item_2": {
           "type": "gallery_item",
           "settings": {
-            "image": "shopify://shop_images/image_gallery_overlay_2.webp",
-            "logo": "shopify://shop_images/image_gallery_overlay_2.webp",
+            "image": "shopify://shop_images/homepage_gallary_2.webp",
             "title": "Welcome Gift",
             "subtitle": "Welcome gift for new Subscribers",
             "description": "New to Segway? Receive a special gift designed to power up your first ride."
