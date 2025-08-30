@@ -210,6 +210,12 @@
         "slide_item_3",
         "slide_item_4"
       ]
+    },
+    "image-with-features": {
+      "type": "image-with-features",
+      "settings": {
+        "title": "Features"
+      }
     }
   },
   "order": [
@@ -217,6 +223,7 @@
     "product_services",
     "product-list",
     "logos",
-    "image-center-slider"
+    "image-center-slider",
+    "image-with-features"
   ]
 }
