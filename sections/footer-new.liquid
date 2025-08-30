@@ -452,19 +452,17 @@
 
         <!-- 社交媒体图标 -->
         <div class="social-icons">
-          {%- for block in section.blocks -%}
-            {%- if block.type == 'social_icon' and block.settings.icon != blank -%}
-              <a href="{{ block.settings.link }}" class="social-icon" target="_blank" rel="noopener">
-                <img
-                  src="{{ block.settings.icon | image_url: width: 80 }}"
-                  alt="{{ block.settings.alt_text | default: 'Social Media Icon' }}"
-                  width="20"
-                  height="20"
-                  loading="lazy"
-                >
-              </a>
-            {%- endif -%}
-          {%- endfor -%}
+          {%- if section.settings.social_icon != blank -%}
+            <a href="{{ section.settings.social_icon_link }}" class="social-icon" target="_blank" rel="noopener">
+              <img
+                src="{{ section.settings.social_icon | image_url: width: 363, height: 70 }}"
+                alt="{{ section.settings.social_icon_alt | default: 'Social Media Icon' }}"
+                width="363"
+                height="70"
+                loading="lazy"
+              >
+            </a>
+          {%- endif -%}
         </div>
 
         <!-- 售前支持 -->
