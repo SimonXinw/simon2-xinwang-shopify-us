@@ -137,34 +137,31 @@
     },
     "logos": {
       "type": "logos",
-      "settings": {
-        "title": "Media Report"
-      },
       "blocks": {
         "logo_item_1": {
           "type": "logo_item",
           "settings": {
-            "image": "shopify://shop_images/media_report_1.webp",
+            "image": "shopify://shop_images/media_report_1.webp"
           }
         },
         "logo_item_2": {
           "type": "logo_item",
           "settings": {
-            "image": "shopify://shop_images/media_report_2.webp",
+            "image": "shopify://shop_images/media_report_2.webp"
           }
         },
         "logo_item_3": {
           "type": "logo_item",
           "settings": {
-            "image": "shopify://shop_images/media_report_3.webp",
+            "image": "shopify://shop_images/media_report_3.webp"
           }
         },
         "logo_item_4": {
           "type": "logo_item",
           "settings": {
-            "image": "shopify://shop_images/media_report_4.webp",
+            "image": "shopify://shop_images/media_report_4.webp"
           }
-        },
+        }
       },
       "block_order": [
         "logo_item_1",
@@ -172,35 +169,35 @@
         "logo_item_3",
         "logo_item_4"
       ],
+      "settings": {
+        "title": "Media Report"
+      }
     },
     "image-center-slider": {
       "type": "image-center-slider",
-      "settings": {
-        "title": "Inspiring Moments"
-      },
       "blocks": {
         "slide_item_1": {
           "type": "slide_item",
           "settings": {
-            "image": "shopify://shop_images/moments_banner_1.webp",
+            "image": "shopify://shop_images/moments_banner_1.webp"
           }
         },
         "slide_item_2": {
           "type": "slide_item",
           "settings": {
-            "image": "shopify://shop_images/moments_banner_1.webp",
+            "image": "shopify://shop_images/moments_banner_1.webp"
           }
         },
         "slide_item_3": {
           "type": "slide_item",
           "settings": {
-            "image": "shopify://shop_images/moments_banner_1.webp",
+            "image": "shopify://shop_images/moments_banner_1.webp"
           }
         },
         "slide_item_4": {
           "type": "slide_item",
           "settings": {
-            "image": "shopify://shop_images/moments_banner_1.webp",
+            "image": "shopify://shop_images/moments_banner_1.webp"
           }
         }
       },
@@ -209,14 +206,13 @@
         "slide_item_2",
         "slide_item_3",
         "slide_item_4"
-      ]
+      ],
+      "settings": {
+        "title": "Inspiring Moments"
+      }
     },
     "image-with-features": {
       "type": "image-with-features",
-      "settings": {
-        "main_title": "Ride Further Together",
-        "image": "shopify://shop_images/image_with_text_1.webp",
-      },
       "blocks": {
         "feature_item_1": {
           "type": "feature",
@@ -252,19 +248,20 @@
         "feature_item_2",
         "feature_item_3",
         "feature_item_4"
-      ]
+      ],
+      "settings": {
+        "image": "shopify://shop_images/image_with_text_1.webp",
+        "main_title": "Ride Further Together"
+      }
     },
     "user-reviews-slider": {
       "type": "user-reviews-slider",
-      "settings": {
-        "title": "What Our Customers Are Saying?"
-      },
       "blocks": {
         "review_item_1": {
           "type": "review_item",
           "settings": {
-            "user_avatar": "shopify://shop_images/user_avatar_1.webp",
             "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.！",
+            "user_avatar": "shopify://shop_images/user_avatar_1.webp",
             "user_name": "Pat Outdoors",
             "rating": 5
           }
@@ -272,8 +269,8 @@
         "review_item_2": {
           "type": "review_item",
           "settings": {
-            "user_avatar": "shopify://shop_images/user_avatar_2.webp",
             "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.",
+            "user_avatar": "shopify://shop_images/user_avatar_2.webp",
             "user_name": "Pat Outdoors",
             "rating": 5
           }
@@ -281,8 +278,8 @@
         "review_item_3": {
           "type": "review_item",
           "settings": {
-            "user_avatar": "shopify://shop_images/user_avatar_3.webp",
             "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.",
+            "user_avatar": "shopify://shop_images/user_avatar_3.webp",
             "user_name": "Pawel Urbanik",
             "rating": 4
           }
@@ -292,7 +289,27 @@
         "review_item_1",
         "review_item_2",
         "review_item_3"
-      ]
+      ],
+      "settings": {
+        "title": "What Our Customers Are Saying?"
+      }
+    },
+    "image-with-info": {
+      "type": "image-with-info",
+      "blocks": {
+        "info_item_1": {
+          "type": "news_item",
+          "settings": {
+            "image": "shopify://shop_images/homepage_news_1.webp",
+            "title": "What Is a Suspension Electric Unicycle?",
+            "description": "It's cool. All EUCs are sensor-responsive. Imagine the feeling of someone silently gliding past you at speed.",
+            "date": "April 10 2025"
+          }
+        }
+      },
+      "settings": {
+        "title": "News"
+      }
     }
   },
   "order": [
@@ -302,6 +319,7 @@
     "logos",
     "image-center-slider",
     "image-with-features",
-    "user-reviews-slider"
+    "user-reviews-slider",
+    "image-with-info"
   ]
 }
