@@ -253,47 +253,47 @@
         "feature_item_3",
         "feature_item_4"
       ]
+    },
+    "user-reviews-slider": {
+      "type": "user-reviews-slider",
+      "settings": {
+        "title": "What Our Customers Are Saying?"
+      },
+      "blocks": {
+        "review_item_1": {
+          "type": "review_item",
+          "settings": {
+            "user_avatar": "shopify://shop_images/user_avatar_1.webp",
+            "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.！",
+            "user_name": "Pat Outdoors",
+            "rating": 5
+          }
+        },
+        "review_item_2": {
+          "type": "review_item",
+          "settings": {
+            "user_avatar": "shopify://shop_images/user_review_2.webp",
+            "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.",
+            "user_name": "Pat Outdoors",
+            "rating": 5
+          }
+        },
+        "review_item_3": {
+          "type": "review_item",
+          "settings": {
+            "user_avatar": "shopify://shop_images/user_avatar_3.webp",
+            "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.",
+            "user_name": "Pawel Urbanik",
+            "rating": 4
+          }
+        }
+      },
+      "block_order": [
+        "review_item_1",
+        "review_item_2",
+        "review_item_3"
+      ]
     }
-  },
-  "user-reviews-slider": {
-    "type": "user-reviews-slider",
-    "settings": {
-      "title": "What Our Customers Are Saying?"
-    },
-    "blocks": {
-      "review_item_1": {
-        "type": "review_item",
-        "settings": {
-          "image": "shopify://shop_images/user_avatar_1.webp",
-          "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.！",
-          "user_name": "Pat Outdoors",
-          "rating": 5
-        }
-      },
-      "review_item_2": {
-        "type": "review_item",
-        "settings": {
-          "image": "shopify://shop_images/user_review_2.webp",
-          "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.",
-          "user_name": "Pat Outdoors",
-          "rating": 5
-        }
-      },
-      "review_item_3": {
-        "type": "review_item",
-        "settings": {
-          "image": "shopify://shop_images/user_avatar_3.webp",
-          "review_text": "Bought this wheel as a trainer to teachothers to ride. Compared to learning on theS18 this wheel is sooo much better. Got mydaughter riding within 30 minutes and havethree other people l am training. Great wheelthat works incredibly well.",
-          "user_name": "Pawel Urbanik",
-          "rating": 4
-        }
-      }
-    },
-    "block_order": [
-      "review_item_1",
-      "review_item_2",
-      "review_item_3"
-    ]
   },
   "order": [
     "image_banner",
