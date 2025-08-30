@@ -452,6 +452,8 @@
 
         <!-- 社交媒体图标 -->
         <div class="social-icons">
+          <p style="color: #fff;">{{ section.settings.social_icon_link }}</p>
+          <p style="color: #fff;">{{ section.settings.social_icon }}</p>
           {%- if section.settings.social_icon != blank -%}
             <a href="{{ section.settings.social_icon_link }}" class="social-icon" target="_blank" rel="noopener">
               <img
