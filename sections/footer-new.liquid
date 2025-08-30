@@ -96,10 +96,11 @@
   }
 
   #FooterNew-{{ section.id }} .newsletter-input {
-    width: 100%;
-    padding: 15px 60px 15px 20px;
-    border: 1px solid #333;
-    border-radius: 25px;
+    width: 405px;
+    height: 73px;
+    padding: 17px 20px;
+    border: 2px solid #fff;
+    border-radius: 15px;
     background-color: transparent;
     color: #fff;
     font-family: Inter, sans-serif;
@@ -108,16 +109,23 @@
   }
 
   #FooterNew-{{ section.id }} .newsletter-input::placeholder {
-    color: #999;
+    font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 26px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #fff;
+
   }
 
   #FooterNew-{{ section.id }} .newsletter-button {
     position: absolute;
-    right: 5px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     border: none;
     border-radius: 50%;
     background-color: #fff;
@@ -133,10 +141,10 @@
     background-color: #f0f0f0;
   }
 
-  #FooterNew-{{ section.id }} .newsletter-button svg {
-    width: 20px;
-    height: 20px;
-    fill: #000;
+  #FooterNew-{{ section.id }} .newsletter-button img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
   }
 
   #FooterNew-{{ section.id }} .newsletter-message {
@@ -397,7 +405,7 @@
               class="newsletter-input"
               value="{{ form.email }}"
               aria-required="true"
-              autocorrect="off"
+              autocorrect="off" 
               autocapitalize="off"
               autocomplete="email"
               {% if form.errors %}
@@ -417,9 +425,13 @@
               id="SubscribeNew"
               aria-label="Subscribe"
             >
-              <svg viewBox="0 0 24 24">
-                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-              </svg>
+              <img
+                src="https://cdn.shopify.com/s/files/1/0676/9170/8603/files/arrow_right.webp?v=1756544793"
+                alt="箭头"
+                width="44"
+                height="44"
+                loading="lazy"
+              >
             </button>
             {%- if form.errors -%}
               <div class="newsletter-message" id="ContactFooterNew-error">
