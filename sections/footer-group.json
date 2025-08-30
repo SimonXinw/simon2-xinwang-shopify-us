@@ -112,7 +112,21 @@
             "link": "/pages/customer-reviews"
           }
         }
-      }
+      },
+      "block_order": [
+        "company_link_1",
+        "company_link_2",
+        "company_link_3",
+        "company_link_4",
+        "information_link_1",
+        "information_link_2",
+        "information_link_3",
+        "information_link_4",
+        "customer_service_link_1",
+        "customer_service_link_2",
+        "customer_service_link_3",
+        "customer_service_link_4"
+      ]
     }
   },
   "order": [
