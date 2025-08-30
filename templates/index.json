@@ -297,7 +297,7 @@
     "image-with-info": {
       "type": "image-with-info",
       "blocks": {
-        "info_item_1": {
+        "news_item_1": {
           "type": "news_item",
           "settings": {
             "image": "shopify://shop_images/homepage_news_1.webp",
