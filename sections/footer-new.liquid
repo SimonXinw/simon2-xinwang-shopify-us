@@ -359,6 +359,7 @@
           <h3 class="footer-column-title">{{ section.settings.company_title | default: 'Company' }}</h3>
           <div class="footer-column-links">
             {%- for block in section.blocks -%}
+              <p style="color: #fff;">{{ block.type }}</p>
               {%- if block.type == 'company_link' -%}
                 <a href="{{ block.settings.link }}" class="footer-link">{{ block.settings.text }}</a>
               {%- endif -%}
@@ -380,7 +381,9 @@
 
         <!-- Customer Service 列 -->
         <div class="footer-column">
-          <h3 class="footer-column-title">{{ section.settings.customer_service_title | default: 'Customer Service' }}</h3>
+          <h3 class="footer-column-title">
+            {{ section.settings.customer_service_title | default: 'Customer Service' }}
+          </h3>
           <div class="footer-column-links">
             {%- for block in section.blocks -%}
               {%- if block.type == 'customer_service_link' -%}
@@ -395,7 +398,9 @@
       <div class="footer-right">
         <!-- 订阅区域 -->
         <div class="newsletter-section">
-          <h3 class="newsletter-title">{{ section.settings.newsletter_title | default: 'Subscribe To Our Newsletter' }}</h3>
+          <h3 class="newsletter-title">
+            {{ section.settings.newsletter_title | default: 'Subscribe To Our Newsletter' }}
+          </h3>
           {%- form 'customer', id: 'ContactFooterNew', class: 'newsletter-form' -%}
             <input type="hidden" name="contact[tags]" value="newsletter">
             <input
@@ -469,7 +474,12 @@
         <!-- 愿景 -->
         <div class="vision-section">
           <h3 class="vision-title">{{ section.settings.vision_title | default: 'Vision' }}</h3>
-          <p class="vision-text">{{ section.settings.vision_text | default: 'Imagine: an early morning adventure through the bustling streets, effortlessly moving between the rhythms of the city. Say goodbye to the banal routine and embrace the excitement of the unknown. Join us on a journey that makes every commute an adventure!' }}</p>
+          <p class="vision-text">
+            {{
+              section.settings.vision_text
+              | default: 'Imagine: an early morning adventure through the bustling streets, effortlessly moving between the rhythms of the city. Say goodbye to the banal routine and embrace the excitement of the unknown. Join us on a journey that makes every commute an adventure!'
+            }}
+          </p>
         </div>
       </div>
     </div>
