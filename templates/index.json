@@ -213,9 +213,7 @@
     },
     "image-with-features": {
       "type": "image-with-features",
-      "settings": {
-        "title": "Features"
-      }
+      "settings": {}
     }
   },
   "order": [
