@@ -372,9 +372,9 @@
           "settings": {
             "image": "shopify://shop_images/image_gallery_overlay_3.webp",
             "logo": "shopify://shop_images/image_gallery_overlay_3.webp",
-            "title": "Rewards Program",
+            "title": "Buy Now, Pay Later",
             "subtitle": "Segway Mileage Club",
-            "description": "Earn miles while interacting or shopping with us"
+            "description": "Buy now, pay later with Affirm"
           }
         },
         "gallery_item_4": {
@@ -382,9 +382,8 @@
           "settings": {
             "image": "shopify://shop_images/image_gallery_overlay_4.webp",
             "logo": "shopify://shop_images/image_gallery_overlay_4.webp",
-            "title": "Rewards Program",
-            "subtitle": "Segway Mileage Club",
-            "description": "Earn miles while interacting or shopping with us"
+            "title": "Free Shipping",
+            "subtitle": "Segway pays your shipping fee with orders over $99"
           }
         }
       },
